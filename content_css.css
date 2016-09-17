@@ -1,0 +1,19 @@
+#emotions {
+	width: 740px;
+}
+
+#emotions label{
+	margin: 6px 8px;
+	cursor:pointer;
+	display: inline-block;
+	min-width:42px;
+}
+
+#emotions img{
+	max-height:48px;
+	cursor:pointer;
+}
+
+#emotions input{
+	margin: 3px 0;
+}

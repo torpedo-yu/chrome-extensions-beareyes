@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>熊坛表情包 选项</title>
+    <link rel="stylesheet" href="options.css" type="text/css">
+    <script src="options.js" type="text/javascript"></script>
+</head>
+<body style="direction: ltr; text-align: left; visibility: visible;">
+<table id="optionsTable">
+<tbody><tr>
+    <td>
+        <div id="header">
+            <table>
+                <tbody><tr>
+                    <td style="width:100%">
+                        <img src="icon-128.png" width="50" class="title" alt="SwitchySharp">
+                        <span class="title" data-i18n-content="options_headerTitle">熊坛表情包 选项</span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </td>
+</tr>
+<tr id="tabsRow">
+    <td>
+        <div id="tabsContainer">
+            <div id="tabProfiles" class="selected">
+                <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/profile.png" style="width:16px;vertical-align:bottom;height:16px;" alt="profile">
+                <span data-i18n-content="options_tabProxyProfiles">情景模式</span>
+            </div>
+            <div id="tabRules" class="normal">
+                <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/filter.png" style="width:16px;vertical-align:bottom;height:16px;" alt="filter">
+                <span data-i18n-content="options_tabSwitchRules">切换规则</span>
+            </div>
+            <div id="tabNetwork" class="normal">
+                <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/network.png" style="width:16px;vertical-align:bottom;height:16px;" alt="network">
+                <span data-i18n-content="options_tabNetwork">网络</span>
+            </div>
+            <div id="tabGeneral" class="normal">
+                <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/options.png" style="width:16px;vertical-align:bottom;height:16px;" alt="options">
+                <span data-i18n-content="options_tabGeneral">通用设置</span>
+            </div>
+            <div id="tabImportExport" class="normal">
+                <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/save.png" style="width:16px;vertical-align:bottom;height:16px;" alt="save">
+                <span data-i18n-content="options_tabImportExport">导入/导出</span>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr style="height:100%">
+<td style="vertical-align:top">
+<div id="body">
+<div id="tabProfilesBody" class="tab" style="display: block;">
+    <table id="proxyTable">
+        <tbody><tr>
+            <th data-i18n-content="options_proxyProfiles">所有情景模式</th>
+            <td></td>
+            <th data-i18n-content="options_profileDetails">详细配置</th>
+        </tr>
+        <tr>
+            <td style="width:28%">
+                <table id="proxyProfiles">
+                    <tbody><tr class="templateRow">
+                        <td style="width:100%" data-i18n-content="options_untitledProfile">[未命名]</td>
+                        <td style="width:28px">
+                            <div class="color" title="情景模式颜色" data-i18n-values="title:options_profileColor">
+                                <div></div>
+                            </div>
+                        </td>
+                        <td style="width:30px">
+                            <div class="delete row" title="删除情景模式" data-i18n-values="title:options_deleteProfile"></div>
+                        </td>
+                    </tr>
+                <tr class="tableRow selected">
+                        <td style="width:100%" data-i18n-content="options_untitledProfile">GoAgent</td>
+                        <td style="width:28px">
+                            <div class="color" title="情景模式颜色" data-i18n-values="title:options_profileColor">
+                                <div class="blue"></div>
+                            </div>
+                        </td>
+                        <td style="width:30px">
+                            <div class="delete row" title="删除情景模式" data-i18n-values="title:options_deleteProfile"></div>
+                        </td>
+                    </tr><tr class="tableRow">
+                        <td style="width:100%" data-i18n-content="options_untitledProfile">GoAgent PAC</td>
+                        <td style="width:28px">
+                            <div class="color" title="情景模式颜色" data-i18n-values="title:options_profileColor">
+                                <div class="blue"></div>
+                            </div>
+                        </td>
+                        <td style="width:30px">
+                            <div class="delete row" title="删除情景模式" data-i18n-values="title:options_deleteProfile"></div>
+                        </td>
+                    </tr><tr class="tableRow">
+                        <td style="width:100%" data-i18n-content="options_untitledProfile">Shadowsocks</td>
+                        <td style="width:28px">
+                            <div class="color" title="情景模式颜色" data-i18n-values="title:options_profileColor">
+                                <div class="purple"></div>
+                            </div>
+                        </td>
+                        <td style="width:30px">
+                            <div class="delete row" title="删除情景模式" data-i18n-values="title:options_deleteProfile"></div>
+                        </td>
+                    </tr></tbody></table>
+                <button class="button" id="btn-new">
+                    <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/add.png" alt="add">
+                    <span data-i18n-content="options_newProfile">新建情景模式</span>
+                </button>
+            </td>
+            <td style="width:13px"></td>
+            <td>
+                <table id="profileDetails">
+                    <tbody><tr class="indent">
+                        <td><label><b data-i18n-content="options_profileName">情景模式名称</b></label></td>
+                        <td colspan="3"><input id="profileName" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr class="section">
+                        <td colspan="4">
+                            <label>
+                                <input id="modeManual" type="radio" name="proxyMode" checked="checked">
+                                <span><b data-i18n-content="options_manualConfig">手动配置</b></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr id="httpRow" class="indent">
+                        <td><label data-i18n-content="options_httpProxy">HTTP 代理</label></td>
+                        <td><input id="httpProxyHost" type="text" class="ltr"></td>
+                        <td><label data-i18n-content="options_proxyPort">端口</label></td>
+                        <td><input id="httpProxyPort" type="text" class="ltr"></td>
+                    </tr>
+                    <tr id="sameProxyRow" class="indent">
+                        <td></td>
+                        <td colspan="3">
+                            <label>
+                                <input id="useSameProxy" type="checkbox" checked="checked">
+                                <span data-i18n-content="options_useSameProxy">对所有协议均使用相同的代理服务器</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr id="httpsRow" class="indent" style="display: none;">
+                        <td><label data-i18n-content="options_httpsProxy">HTTPS 代理</label></td>
+                        <td><input id="httpsProxyHost" type="text" class="ltr"></td>
+                        <td><label data-i18n-content="options_proxyPort">端口</label></td>
+                        <td><input id="httpsProxyPort" type="text" class="ltr"></td>
+                    </tr>
+                    <tr id="ftpRow" class="indent" style="display: none;">
+                        <td><label data-i18n-content="options_ftpProxy">FTP 代理</label></td>
+                        <td><input id="ftpProxyHost" type="text" class="ltr"></td>
+                        <td><label data-i18n-content="options_proxyPort">端口</label></td>
+                        <td><input id="ftpProxyPort" type="text" class="ltr"></td>
+                    </tr>
+                    <tr id="socksRow" class="indent" style="display: none;">
+                        <td><label data-i18n-content="options_socksHost">SOCKS 代理</label></td>
+                        <td><input id="socksProxyHost" type="text" class="ltr"></td>
+                        <td><label data-i18n-content="options_proxyPort">端口</label></td>
+                        <td><input id="socksProxyPort" type="text" class="ltr"></td>
+                    </tr>
+                    <tr id="socksVersionRow" class="indent" style="display: none;">
+                        <td></td>
+                        <td colspan="3">
+                            <table>
+                                <tbody><tr>
+                                    <td style="padding: 0 !important">
+                                        <label>
+                                            <input id="socksV4" type="radio" name="socksVersion" checked="checked">
+                                            <span data-i18n-content="options_socks4">SOCKS v4</span>
+                                        </label>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label>
+                                            <input id="socksV5" type="radio" name="socksVersion">
+                                            <span data-i18n-content="options_socks5">SOCKS v5</span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr class="section">
+                        <td colspan="4">
+                            <label>
+                                <input id="modeAuto" type="radio" name="proxyMode">
+                                <span><b data-i18n-content="options_autoConfig">自动配置</b></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr id="configUrlRow" class="indent disabled">
+                        <td><label data-i18n-content="options_autoConfigUrl">自动配置的URL</label></td>
+                        <td colspan="3"><input id="proxyConfigUrl" type="text" class="ltr" disabled="disabled"></td>
+                    </tr>
+                    <tr class="indent">
+                        <td colspan="4">
+                            <input type="file" id="pfile" name="pfile" style="visibility:hidden;position:absolute;">
+                            <button class="button disabled" data-i18n-content="options_importPAC" id="importPACButton" disabled="disabled">导入 PAC 文件</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr class="indent">
+                        <td>
+                            <label><b data-i18n-content="options_noProxyFor">不代理的地址:</b></label>
+                            <span data-help="noProxyFor">
+                        </span></td>
+                        <td colspan="3"><input id="proxyExceptions" type="text" class="ltr"></td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+
+<div id="tabRulesBody" class="tab" style="display: none;">
+    <label>
+							<span class="title"><input id="chkSwitchRules" type="checkbox" checked="checked">
+								<span data-i18n-content="options_switchRulesEnable">启用切换规则</span>
+								<span data-help="switchRulesEnable">
+							</span>
+    </span></label>
+
+    <div id="switchRules">
+        <table id="rulesTable" class="rulesTable">
+            <tbody><tr class="tableHeader">
+                <th style="width:18%" data-i18n-content="options_ruleName">规则名称</th>
+                <th style="width:45%"><span data-i18n-content="options_urlPattern">URL 模式</span>
+                    <span data-help="urlPattern">
+                </span></th>
+                <th style="width:16%"><span data-i18n-content="options_patternType">模式匹配</span>
+                    <span data-help="patternType">
+                </span></th>
+                <th style="width:21%"><span data-i18n-content="options_proxyProfile">情景模式</span>
+                    <span data-help="proxyProfile">
+                </span></th>
+                <th style="width:28px"></th>
+            </tr>
+            <tr class="templateRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">新建规则</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">-</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr>
+            <tr class="defaultRow">
+                <td>
+                    <div>
+                        <span class="ruleName" data-i18n-content="options_defaultRule">默认规则</span>
+                        <span data-help="defaultRule">
+                    </span></div>
+                </td>
+                <td colspan="2">
+                    <div><span class="urlPattern" data-i18n-content="options_defaultRuleUrlPattern">All URLs that doesn't match any other pattern</span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select id="cmbDefaultRuleProfile" name="profileId"><option value="direct" selected="selected">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks">Shadowsocks</option></select></div>
+                </td>
+                <td><img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/filter.png" alt="Apply profile to all rules" id="apply2All"></td>
+            </tr>
+        <tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.google.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.google.com.*/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google analytics</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.google-analytics.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google apis</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.googleapis.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google code</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.googlecode.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">google usercontent</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.googleusercontent.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">gstatic</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.gstatic.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 10</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.myfreecams.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 11</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.googlevideo.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 12</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.yyets.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 13</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.rrys.tv/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 14</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.rrys123.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 15</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://wo.yao.cl/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 16</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://thepiratebay.se/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 17</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://tvunderground.org.ru/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 18</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.evozi.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 19</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://67.220.90.4/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 20</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.tumblr.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 21</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://badoinkvr.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 22</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.virtualrealporn.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 3</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://1024cl.tk/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 4</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://stackoverflow.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 5</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://vip.btcchina.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 7</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://stackoverflow.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 8</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.imdb.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">Quick Rule 9</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://www.yyets.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">short link</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://goo.gl/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">t.co</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://t.co/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">twing</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.twimg.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">wikipedia</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.wikipedia.org/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr><tr class="tableRow">
+                <td>
+                    <div title="点击编辑" data-i18n-values="title:options_clickToEdit"><span class="ruleName" data-i18n-content="options_newRule">ytimg</span>
+                        <input name="name" type="text"></div>
+                </td>
+                <td class="ltr">
+                    <div title="Click to edit">
+                        <span class="urlPattern ltr">*://*.ytimg.com/*</span>
+                        <input name="urlPattern" type="text">
+                        <!--b class="tag">RegEx</b--></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="patternType">
+                            <option value="wildcard" data-i18n-content="options_patternTypeWildcard" selected="selected">通配符</option>
+                            <option value="regexp" data-i18n-content="options_patternTypeRegExp">正则表达式</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div>
+                        <select name="profileId"><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select></div>
+                </td>
+                <td>
+                    <div class="delete rule" title="删除规则" data-i18n-values="title:options_deleteRule"></div>
+                </td>
+            </tr></tbody></table>
+        <button class="button" id="btnNewRule">
+            <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/add.png" alt="add">
+            <span data-i18n-content="options_newRule">新建规则</span>
+        </button>
+        <hr>
+
+        <label>
+							<span class="title">
+								<input id="chkRuleList" type="checkbox" checked="checked">
+								<span data-i18n-content="options_ruleList">在线规则列表</span>
+								<span data-help="ruleList"></span>
+							</span>
+            <a href="http://code.google.com/p/switchy/wiki/RuleList" class="link" target="_blank" data-i18n-values=".style.float:global_float;" style="font-size: small; font-style: italic; float: right;" data-i18n-content="options_moreInfo">更多信息</a>
+        </label>
+        <table id="ruleListsTable" class="rulesTable">
+            <tbody class=""><tr class="tableHeader">
+                <th style="width:60%" class=""><span data-i18n-content="options_ruleListUrl" class="">规则列表URL</span>
+                    <span data-help="ruleListUrl" class="">
+                </span></th>
+                <th style="width:20%" class=""><span data-i18n-content="options_reloadEvery" class="">自动更新间隔</span>
+                    <span data-help="reloadEvery" class="">
+                </span></th>
+                <th style="width:20%" class=""><span data-i18n-content="options_proxyProfile" class="">情景模式</span>
+                    <span data-help="proxyProfileRule" class="">
+                </span></th>
+            </tr>
+            <tr class="tableRow">
+                <td class=""><input id="txtRuleListUrl" type="text" class="ltr"></td>
+                <td class="">
+                    <select id="cmbRuleListReload" class="">
+                        <option value="15" data-i18n-content="options_15Minutes" class="">15 分钟</option>
+                        <option value="30" data-i18n-content="options_30Minutes" class="">30 分钟</option>
+                        <option value="45" data-i18n-content="options_45Minutes" class="">45 分钟</option>
+                        <option value="60" data-i18n-content="options_1Hour" class="">1 小时</option>
+                        <option value="180" data-i18n-content="options_3Hours" class="">3 小时</option>
+                        <option value="360" data-i18n-content="options_6Hours" class="">6 小时</option>
+                        <option value="720" data-i18n-content="options_12Hours" class="" selected="selected">12 小时</option>
+                        <option value="1440" data-i18n-content="options_everyday" class="">每天</option>
+                    </select>
+                </td>
+                <td class="">
+                    <select id="cmbRuleListProfile" class=""><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks" selected="selected">Shadowsocks</option></select>
+                </td>
+            </tr>
+        </tbody></table>
+        <label id="autoProxy" class="">
+            <input id="chkAutoProxy" type="checkbox" checked="checked">
+            <span data-i18n-content="options_autoProxyCompatible">AutoProxy 兼容列表</span>
+            <span data-help="autoProxyCompatible">
+        </span></label>
+
+        <div style="text-align:right;">
+            <span data-i18n-content="options_lastSuccessfulUpdate">上次成功更新: </span><span id="lastListUpdate">Sun May 08 2016 21:42:55 GMT+0800 (中国标准时间)</span>
+            <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/loading.gif" style="width:16px;height:16px;visibility:hidden;" alt="Loading" id="updatingListIcon">
+            <button class="button" id="updateListNow" data-i18n-content="options_updateListNow">立即更新列表</button>
+        </div>
+    </div>
+</div>
+
+<div id="tabNetworkBody" class="tab" style="display: none;">
+    <p>
+        <label>
+								<span class="title"><input id="chkMonitorProxyChanges" type="checkbox">
+									<span data-i18n-content="options_monitorProxyChanges">监控代理变化</span>
+									<span data-help="monitorProxyChanges">
+								</span>
+        </span></label>
+    </p>
+
+    <p>
+        <label>
+								<span class="indent disabled"><input id="chkPreventProxyChanges" type="checkbox" disabled="disabled">
+									<span data-i18n-content="options_revertProxyChanges">撤消其他扩展对代理的更改。</span>
+									<span data-help="revertProxyChanges">
+
+								</span>
+        </span></label>
+    </p>
+</div>
+
+<div id="tabImportExportBody" class="tab" style="display: none;">
+    <div class="title" data-i18n-content="options_switchRules">切换规则</div>
+    <table class="optionGroup">
+        <tbody><tr class="section">
+            <td>
+                <button class="button" id="exportPacFile" data-i18n-content="options_exportPacFile">导出PAC文件</button>
+            </td>
+            <td data-i18n-content="options_exportPacFile_help"> 导出PAC文件,以便在其它浏览器使用。 </td>
+        </tr>
+        <tr class="section">
+            <td>
+                <button class="button" id="exportRuleList" data-i18n-content="options_exportRuleList">导出规则列表</button>
+            </td>
+            <td data-i18n-content="options_exportRuleList_help"> 导出规则文件，以便与朋友共享。 </td>
+        </tr>
+    </tbody></table>
+    <hr>
+    <div class="title" data-i18n-content="options_headerTitle">SwitchySharp 选项</div>
+    <table id="exportRulesTable" class="optionGroup">
+        <tbody><tr class="section">
+            <td>
+                <button class="button" id="makeBackup" data-i18n-content="options_makeBackup">生成备份文件</button>
+            </td>
+            <td data-i18n-content="options_makeBackup_help"> 备份您的所有设置。 </td>
+        </tr>
+        <tr class="section">
+            <td>
+                <input type="file" id="rfile" name="rfile" style="visibility:hidden;position:absolute;">
+                <button class="button" id="RestoreFileButton" data-i18n-content="options_restoreLocal">从文件恢复</button>
+            </td>
+            <td data-i18n-content="options_restoreLocal_help">从本地备份文件供恢复SwitchySharp配置。</td>
+        </tr>
+        <tr class="section">
+            <td>
+                <button class="button" id="restoreBackup" data-i18n-content="options_restoreBackup">在线恢复备份</button>
+            </td>
+            <td>
+                <input type="text" id="txtBackupFilePath" class="initial ltr" value="备份文件地址 (e.g. &#39;http://iewb.net/switchy.bak&#39;)" data-i18n-values="value:options_restoreBackup_help">
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+
+<div id="tabGeneralBody" class="tab" style="display: none;">
+    <label>
+							<span class="title"><input id="chkQuickSwitch" type="checkbox">
+								<span data-i18n-content="options_quickSwitch">快速切换</span>
+								<span data-help="quickSwitch">
+							</span>
+    </span></label>
+
+    <div id="quickSwitchDiv" class="indent">
+        <p>
+            <label class="title" data-i18n-content="options_cycledProfiles">循环切换以下情景模式: </label>
+        </p>
+
+        <p data-i18n-content="options_quickSwitch_cycle_help">当您点击工具栏图标时, SwitchySharp将按如下顺序切换代理配置。</p>
+        <ul id="cycleEnabled" class="indent ui-sortable disabled ui-sortable-disabled"><li>[直接连接]<div class="inactive"></div></li></ul>
+        <p class="title" data-i18n-content="options_notCycledProfiles">不循环切换的情景模式 (拖动到上面的框中启用切换):</p>
+        <ul id="cycleDisabled" class="indent ui-sortable disabled ui-sortable-disabled"><li>GoAgent<div class="blue"></div></li><li>GoAgent PAC<div class="blue"></div></li><li>Shadowsocks<div class="purple"></div></li><li>[自动切换]<div class="auto-blue"></div></li><li>[使用系统代理设置]<div class="inactive"></div></li></ul>
+    </div>
+
+    <hr>
+
+    <div class="title">
+        <span data-i18n-content="options_startupProfile">启动情景模式：</span>
+        <span data-help="startupProfile">
+    </span></div>
+    <p>
+        <select id="cmbStartupProfile"><option value="">(上次使用的情景模式)</option><option value="direct">[直接连接]</option><option value="GoAgent">GoAgent</option><option value="pac">GoAgent PAC</option><option value="Shadowsocks">Shadowsocks</option><option value="auto">[自动切换]</option><option value="system">[使用系统代理设置]</option></select>
+    </p>
+
+    <hr>
+
+    <div class="title" data-i18n-content="options_miscOptions">其他选项</div>
+    <p>
+        <label>
+								<span class="indent"><input id="chkConfirmDeletion" type="checkbox">
+									<span data-i18n-content="options_confirmDeletion">删除情景模式或规则时需要确认</span>
+									<span data-help="confirmDeletion">
+								</span>
+        </span></label>
+    </p>
+
+    <p>
+        <label>
+								<span class="indent"><input id="chkRefreshTab" type="checkbox">
+									<span data-i18n-content="options_RefreshTab">当更改情景模式时刷新当前标签</span>
+									<span data-help="refreshTab">
+								</span>
+        </span></label>
+    </p>
+</div>
+
+<div class="control">
+    <hr>
+    <table>
+        <tbody><tr>
+            <td style="width:100%">
+                <button class="button" id="resetOptions" data-i18n-content="options_resetOptions">重置选项</button>
+            </td>
+            <td>
+                <button class="button bold" id="saveOptions" data-i18n-content="options_save">保存</button>
+            </td>
+            <td></td>
+            <td>
+                <button class="button" id="closeWindow" data-i18n-content="options_close">关闭</button>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+<div id="helpToolTips">
+
+    <div class="help" id="help_noProxyFor">
+        <p data-i18n-content="options_noProxyFor_help">使用分号 ( ; ) 分隔。</p>
+    </div>
+    <div class="help" id="help_switchRulesEnable" data-i18n-content="options_switchRulesEnable_help"><p>切换规则指定哪个代理应该用于每一个网址。</p><hr>
+<p>这个选项被激活时,你可以在弹出菜单看到两个项目：</p>
+<table>
+	<tbody><tr>
+		<td><em>自动模式</em></td>
+		<td>点击这个项目将启动开关的规则。</td>
+	</tr>
+	<tr>
+		<td><em>新规则</em></td>
+		<td>为当前的网站快速增加一个新的切换规则。</td>
+	</tr>
+</tbody></table></div>
+    <div id="help_proxyProfile" class="help">
+        <p data-i18n-content="options_proxyProfile_help">当规则匹配时，使用此情景模式</p>
+    </div>
+    <div class="help" id="help_defaultRule" data-i18n-content="options_defaultRule_help"><p>如果没有其他规则匹配,此规则将被应用</p>
+<p><strong>注意:</strong> 此规则不能被删除。</p></div>
+    <div class="help" id="help_urlPattern" data-i18n-content="options_urlPattern_help"><p>该网页的URL模式。</p><hr>
+<table>
+	<tbody><tr>
+		<td colspan="2"><strong>配置参考</strong></td>
+	</tr>
+	<tr>
+		<td><em>星号 (*) </em></td>
+		<td>代表零个或多个字符。</td>
+	</tr>
+	<tr>
+		<td><em>问号 (?) </em></td>
+		<td>代表一个字符。</td>
+	</tr>
+	<tr>
+		<td colspan="2"><br><strong>范例</strong></td>
+	</tr>
+	<tr>
+		<td><em>*://www.google.com/* </em></td>
+		<td>匹配所有网址(HTTP和HTTPS)</td>
+	</tr>
+	<tr>
+		<td><em>https://*.google.com/foo*bar </em></td>
+		<td>https配置路径中的任何子域名与子目录。</td>
+	</tr>
+	<tr>
+		<td><em>http://example.org/foo/bar.html </em></td>
+		<td>精确匹配指定的URL。</td>
+	</tr>
+</tbody></table></div>
+    <div class="help" id="help_patternType" data-i18n-content="options_patternType_help"><p>该类型的匹配模式.</p><hr>
+<table>
+	<tbody><tr>
+		<td><em>通配符</em></td>
+		<td>使用*来匹配任意数量的字符。</td>
+	</tr>
+	<tr>
+		<td><em>正则表达式</em></td>
+		<td>使用正则表达式匹配 URL。</td>
+	</tr>
+</tbody></table></div>
+    <div class="help" id="help_ruleList">
+        <p data-i18n-content="options_ruleList_help">导入在线规则列表。</p>
+    </div>
+    <div class="help" id="help_ruleListUrl">
+        <p data-i18n-content="options_ruleListUrl_help">规则列表的地址(不能使用本地文件)。</p>
+    </div>
+    <div class="help" id="help_reloadEvery">
+        <p data-i18n-content="options_reloadEvery_help">自动更新规则列表的频率。</p>
+    </div>
+    <div class="help" id="help_proxyProfileRule">
+        <p data-i18n-content="options_ruleListProxyProfile_help">当在线规则列表中的任何规则匹配时，使用此情景模式。</p>
+    </div>
+
+    <div class="help" id="help_autoProxyCompatible">
+        <p data-i18n-content="options_autoProxyCompatible_help">如果是AutoProxy列表规则(如gfwlist),请选中此选项。</p>
+    </div>
+    <div class="help" id="help_monitorProxyChanges">
+        <p data-i18n-content="options_monitorProxyChanges_help">当代理设置变化时， SwitchySharp 会调整图标来反映变化。</p>
+    </div>
+    <div class="help" id="help_revertProxyChanges">
+        <p data-i18n-content="options_revertProxyChanges_help">恢复被其它应用程序更改的代理设置。</p>
+    </div>
+    <div class="help" id="help_quickSwitch" data-i18n-content="options_quickSwitch_help"><p>可以让您一键切换代理配置
+(点击SwitchyShap图标即可)。</p><hr>
+<p><strong>注意:</strong> 启用此特性后，您无法通过单击 SwitchySharp 图标弹出配置菜单。你需要右击SwitchySharp图标并选择"选项"来进入配置页面。</p></div>
+    <div class="help" id="help_confirmDeletion">
+        <p data-i18n-content="options_confirmDeletion_help">如果选中此选项，在您要删除情景模式或规则时， SwitchySharp 会询问您是否确定。</p>
+    </div>
+    <div class="help" id="help_refreshTab">
+        <p data-i18n-content="options_refreshTab_help">当在弹出菜单中或快速切换中更改情景模式时，刷新当前标签页。</p>
+    </div>
+    <div class="help" id="help_startupProfile">
+        <p data-i18n-content="options_startupProfile_help">扩展启动时应用的情景模式。</p>
+    </div>
+</div>
+<div id="upgradePopupBackdrop" style="display: none;">
+  <div id="upgradePopup" style="display: block; height: auto">
+      <h2 class="header title">
+          <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/info.png" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+          <span data-i18n-content="options_upgradeTitle">SwitchyOmega, 下一代 SwitchySharp 升级版</span>
+      </h2>
+      <div class="header light" style="margin-bottom: 0">
+          <div style="float:left; margin-right: 10px; cursor: pointer; height: 100%;">
+              <img src="chrome-extension://dpplabbmogkhghncfbfdeeokoefdjegm/assets/images/omega-64.png" title="SwitchyOmega">
+          </div>
+          <div style="white-space: normal; overflow: hidden;" data-i18n-content="options_upgradeContent"><p>为了回应大家的期待，我每天都在努力。18个月前，我开始着手2.x新版的开发，其项目名称为 SwitchyOmega.</p><p>我花了很多时间来设计、编码和测试。我重新实现了项目架构，并且重新设计了选项和弹出菜单的界面。自动切换现在更加灵活，且性能突飞猛进。许多新特性也从之前的梦想变成了现实。<a href="https://github.com/FelisCatus/SwitchyOmega/wiki/SwitchyOmega-%E6%96%B0%E5%8A%9F%E8%83%BD">不妨看看有什么新功能。</a></p><p>对于这次更新，我们已经等待了太久太久。现在，新版终于已经完成了。新版完全免费，我不求任何回报，只希望大家能够继续支持。</p><p>P.S. 别担心，更新后可自动升级设置，无须再次手动配置。</p></div>
+          <div class="control" style="padding-top: 10px; text-align: right;">
+            <a class="button bold" href="https://github.com/FelisCatus/SwitchyOmega/wiki/SwitchyOmega-%E6%96%B0%E5%8A%9F%E8%83%BD" id="btnUpgrade" data-i18n-content="options_upgrade" data-i18n-values="href:options_upgradeLink">升级</a>
+            <button class="button" id="btnCancel" data-i18n-content="popup_cancel">取消</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "熊坛表情包",
+  "version": "0.0.5",
+  "description": "熊坛专用插件，可使用更多表情...",
+  "icons": { 
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "background": { 
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "beareyes_19.png",
+      "38": "beareyes_38.png"
+    },
+    "default_title": "熊坛表情包" 
+  },
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus",
+    "http://*.beareyes.com.cn/*"
+  ],
+  "content_scripts":[{
+    "matches":["http://*.beareyes.com.cn/*"],
+    "js":["jquery-2.0.0.min.js", "content_script.js"],
+    "css":["content_css.css"],
+    "all_frames": true
+  }],
+  "options_page": "options.html"
+}
