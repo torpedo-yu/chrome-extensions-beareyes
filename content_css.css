@@ -17,3 +17,63 @@
 #emotions input{
 	margin: 3px 0;
 }
+
+.btn {
+    outline: none;
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    text-shadow: rgba(255, 255, 255, 0.74902) 0px 1px 1px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px;
+    padding: 4px 12px;
+    background-repeat: repeat-x;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: rgba(0, 0, 0, 0.0980392) rgba(0, 0, 0, 0.0980392) rgb(179, 179, 179);
+    border-radius: 4px;
+}
+
+.btn-mini {
+    font-size: 10.5px;
+    padding: 0px 3px;
+    border-radius: 3px;
+}
+
+.btn-mini i{
+    padding-right: 2px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/bootstrap/img/glyphicons-halflings.png');
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+
+.icon-star{background-position: -120px 0;}
+.icon-zoom-in{background-position:-336px 0}
+.icon-zoom-out{background-position:-360px 0}
+.icon-resize-full{background-position:-360px -96px}
+.icon-resize-small{background-position:-384px -96px}
+
+.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {
+    margin-top: -1px;
+}
+.show{
+  display:block;
+}
+
+ul>img,ul>font>img{display:none;}

@@ -9,7 +9,7 @@
     "128": "icon-128.png"
   },
   "background": { 
-    "scripts": ["background.js"],
+    "scripts": ["init_options.js","background.js"],
     "persistent": true
   },
   "page_action": {
@@ -32,7 +32,11 @@
     "matches":["http://*.beareyes.com.cn/*"],
     "js":["jquery-2.0.0.min.js","init_options.js","content_script.js"],
     "css":["content_css.css"],
+    "run_at": "document_start",
     "all_frames": true
   }],
-  "options_page": "options.html"
+  "options_page": "options.html",
+  "web_accessible_resources": [
+   "bootstrap/img/glyphicons-halflings.png"
+  ]
 }

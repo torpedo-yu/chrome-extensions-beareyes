@@ -61,48 +61,81 @@ function showEmotions() {
   }
 }
 
+function addScript(js) {
+  var script = document.createElement('script');
+  script.type = "text/javascript";
+  script.textContent = js;
+  document.body.appendChild(script);
+}
+
+function addCss(css, id) {
+  var style = document.createElement('style');
+  style.id = id;
+  style.type = "text/css";
+  style.textContent = css;
+  document.body.appendChild(style);
+}
+
+
+document.addEventListener('DOMContentLoaded',function(){
+//addCss('ul>img,ul>font>img{display:none;}', 'hideimg');
+    $("ul>img,ul>font>img").each(function(){
+      if (!$(this)[0].complete) {
+        console.log('stop:' + $(this).attr("src"));
+        $(this).attr("org-src", $(this).attr("src"));
+        $(this).attr("src","");
+      }
+    });
+
 chrome.storage.sync.get(init_options(), function(items) {
   //more emotions
   if (items.moreEmotions) {
     var a=$("form table tr td a[href='#here']");
     if (a) {
       a.html('<font onclick="showEmotions();">' + a.text() + '！</font>');
-
-      var script = document.createElement('script');
-      script.type = "text/javascript";
-      script.textContent = 'var _emotionsHtml = "";\n' + emotionsHtml.toString() + '\n' + showEmotions.toString() + '\n';
-      document.body.appendChild(script);
+      addScript('var _emotionsHtml = "";\n' + emotionsHtml.toString() + '\n' + showEmotions.toString() + '\n');
     }
   }
     //img link 
   if (items.imageFix) {
     var img=$("img[src^='http://bimg.beareyes.com.cn/123.php?url=']");
-    if (img) {
-      img.each(function(){
-        $(this).attr("src", $(this).attr("src").replace(/http.*\/123\.php\?url=/,""));
-      });
-    }
+    img.each(function(){
+      $(this).attr("src", $(this).attr("src").replace(/http.*\/123\.php\?url=/,""));
+    });
   }
     //https link
   if (items.httpsLink) {
     var ul=$("body>ul");
-    if (ul) {
-      ul.each(function(){
-        $(this).html($(this).html().replace(/(https:\/\/[^" '<>]+)/gm ,"<a href=\"$1\" target=\"_blank\">$1</a>"));
-      });
-    }
+    ul.each(function(){
+      $(this).html($(this).html().replace(/(https:\/\/[^" '<>]+)/gm ,"<a href=\"$1\" target=\"_blank\">$1</a>"));
+    });
   }
     //no head
   if (items.noHead) {
     var head=$("ul>li>a[href^='/cgi-bin/']");
-    if (ul) {
-      head.each(function(){
-        if ($(this).text().trim()=="") {
-          $(this).html($(this).prev()[0].outerHTML);
-          $(this).prev().remove();
-        }
-      });
-    }
+    head.each(function(){
+      if ($(this).text().trim()=="") {
+        $(this).html($(this).prev()[0].outerHTML);
+        $(this).prev().remove();
+      }
+    });
   }  
+  // image Show
+  if (items.imageShow!='click') {
+    $("#hideimg").remove();
+  }
+  if (items.imageShow=='click') {
+    var btn= $('<button class="btn btn-mini" href="#"><i class="icon-resize-full"></i>图片</button>').insertBefore( "ul>img,ul>font>img" );
+    btn.each(function(){
+      $(this).bind('click', function(){$(this).find("i").toggleClass('icon-resize-full').toggleClass('icon-resize-small');
+      var next = $(this).next();
+      if (next.attr("org-src")!="") {
+        console.log('reload:' + next.attr("org-src"));
+        next.attr("src", next.attr("org-src"))
+        next.attr("org-src", "");
+      }
+      $(this).next().toggleClass('show');});
+    });
+  }
 });
-  
+});
