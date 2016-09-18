@@ -25,11 +25,12 @@
     "webRequest",
     "webRequestBlocking",
     "contextMenus",
+    "storage",
     "http://*.beareyes.com.cn/*"
   ],
   "content_scripts":[{
     "matches":["http://*.beareyes.com.cn/*"],
-    "js":["jquery-2.0.0.min.js", "content_script.js"],
+    "js":["jquery-2.0.0.min.js","init_options.js","content_script.js"],
     "css":["content_css.css"],
     "all_frames": true
   }],
