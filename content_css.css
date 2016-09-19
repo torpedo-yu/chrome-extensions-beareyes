@@ -1,27 +1,28 @@
 #emotions {
-	width: 740px;
+  width: 740px;
 }
 
 #emotions label{
-	margin: 6px 8px;
-	cursor:pointer;
-	display: inline-block;
-	min-width:42px;
+  margin: 6px 8px;
+  cursor:pointer;
+  display: inline-block;
+  min-width:42px;
 }
 
 #emotions img{
-	max-height:48px;
-	cursor:pointer;
+  max-height:48px;
+  cursor:pointer;
 }
 
 #emotions input{
-	margin: 3px 0;
+  margin: 3px 0;
 }
 
 .btn {
+    margin-right:0px;
     outline: none;
     display: inline-block;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
     font-size: 14px;
     line-height: 20px;
     color: rgb(51, 51, 51);
@@ -39,6 +40,22 @@
     border-image: initial;
     border-color: rgba(0, 0, 0, 0.0980392) rgba(0, 0, 0, 0.0980392) rgb(179, 179, 179);
     border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top,#08c,#04c);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+    background-image: -webkit-linear-gradient(top,#08c,#04c);
+    background-image: -o-linear-gradient(top,#08c,#04c);
+    background-image: linear-gradient(to bottom,#08c,#04c);
+    background-repeat: repeat-x;
+    border-color: #04c #04c #002a80;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-mini {
@@ -62,6 +79,9 @@
     background-position: 14px 14px;
     background-repeat: no-repeat;
 }
+.icon-white {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/bootstrap/img/glyphicons-halflings-white.png");
+}
 
 .icon-star{background-position: -120px 0;}
 .icon-zoom-in{background-position:-336px 0}
@@ -72,8 +92,28 @@
 .btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {
     margin-top: -1px;
 }
+
 .show{
   display:block;
 }
 
-ul>img,ul>font>img{display:none;}
+.img-wrap {
+  display: inline-block;
+}
+
+.img-wrap img{
+  display: block;
+}
+
+.img-hide img{
+  display:none;
+}
+
+.img-wrap{
+  display: inline-block;
+}
+
+ul>img, ul>font>img, ul>a>img, ul>font>a>img{display:none;}
+
+.img-full {max-width: none; max-height: none;}
+.img-click {cursor:pointer;}

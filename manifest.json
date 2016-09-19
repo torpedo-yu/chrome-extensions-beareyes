@@ -37,6 +37,7 @@
   }],
   "options_page": "options.html",
   "web_accessible_resources": [
-   "bootstrap/img/glyphicons-halflings.png"
+   "bootstrap/img/glyphicons-halflings.png",
+   "bootstrap/img/glyphicons-halflings-white.png"
   ]
 }
