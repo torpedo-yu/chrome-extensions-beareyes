@@ -26,6 +26,7 @@
     "webRequestBlocking",
     "contextMenus",
     "storage",
+    "background",
     "http://*.beareyes.com.cn/*"
   ],
   "content_scripts":[{

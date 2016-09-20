@@ -75,12 +75,20 @@ function addCss(css, id) {
   style.textContent = css;
   document.body.appendChild(style);
 }
-
-
-document.addEventListener('DOMContentLoaded',function(){
-
+  
 
 chrome.storage.sync.get(init_options(), function(items) {
+  console.log('chrome.storage.sync.get');
+  
+
+  //$("ul>img,ul>font>img").each(function(){
+  //  if (!$(this)[0].complete) {
+  //    console.log('stop:' + $(this).attr("src"));
+  //    $(this).attr("data-src", $(this).attr("src"));
+  //    $(this).attr("src","");
+  //  }
+  //});  
+  
   //more emotions
   if (items.moreEmotions) {
     var a=$("form table tr td a[href='#here']");
@@ -128,16 +136,8 @@ chrome.storage.sync.get(init_options(), function(items) {
     addCss('ul>img,ul>font>img,ul>a>img,ul>font>a>img{'+ imgCss +'}', 'imgCss');
   }
 
+  console.log("items.imageShow:"+items.imageShow);
   if (items.imageShow=='click') {
-
-    $("ul>img,ul>font>img").each(function(){
-      if (!$(this)[0].complete) {
-        console.log('stop:' + $(this).attr("src"));
-        $(this).attr("data-src", $(this).attr("src"));
-        $(this).attr("src","");
-      }
-    });
-
     var img= $("ul>img,ul>font>img");
     img.each(function(){
       $(this).wrap("<div class=\"img-wrap img-hide\"></div>");
@@ -204,4 +204,13 @@ chrome.storage.sync.get(init_options(), function(items) {
   }
 
 });
-});
+//});
+
+
+
+document.addEventListener('DOMContentLoaded',function(){
+    console.log('DOMContentLoaded');
+
+    console.log( chrome.runtime   );
+});  
+
